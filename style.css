@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, Arial, Helvetica;;
+}
+
+.background-site img {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: -3;
+}
+
+.background-color {
+    position: fixed;
+    background: linear-gradient(0deg, rgba(53,67,85,1) 10%, rgba(0,0,0,0.6026785714285714) 100%);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(21, 29, 39);
+    box-shadow: 1px 2px 3px #000000;
+    width: 100%;
+    height: 80px;
+}
+
+.navbar-left img {
+    width: 150px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.navbar-rigth {
+    width: 100px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-rigth img {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.add-cart {
+    width: 70px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #354355;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.add-cart:hover {
+    background-color: rgb(201, 0, 0);
+    font-size: 18px;
+}
+
+main {
+    color: white;
+    margin-top: 130px;
+}
+
+.info-VPs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.info-VPs h1 {
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.info-VPs p {
+    font-size: 22px;
+}
+
+.other-buttons button {
+    background-color: rgb(201, 0, 0);
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
+    border-radius: 5px;
+    width: 150px;
+    height: 60px;
+    color: white;
+    font-size: 15px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.other-buttons button:hover {
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(168, 0, 0);
+}
+
+.other-buttons button:active {
+    font-size: 14px;
+    background-color: rgb(202, 38, 38);
+}
+
+.products-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;   
+    cursor: pointer; 
+}
+
+.products-cards img {
+    border-radius: 5px;
+}
+
+.product-vp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #151d27;
+    width: 220px;
+    height: 240px;
+    border-radius: 5px;
+}
+
+.product-vp p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-value {
+    background-color: #354355;
+    border: 1px solid #435467;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    margin-top: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-value:hover {
+    background-color: rgb(201, 0, 0);
+}
+
+.cart-button {
+    display: none;
+}
+
+button:hover .cart-button { /* com este seletor */
+    display: inline;
+    /* sempre que eu passar o mouse por cima do butto, o img cart vai aparecer */
+}
+
+button:active {
+    font-size: 14px;
+    background-color: rgb(202, 38, 38);
+}
+
+.other-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
