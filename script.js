@@ -1,6 +1,6 @@
 const list = document.querySelector(".products-cards") // section onde minhas divs dos produtos estão
 const buttonProducts = document.querySelector(".products") // mapeamento do botão "Produtos"
-const buttonDiscount = document.querySelector(".discount")// mapeando botão "pagamento via Pix"
+// const buttonDiscount = document.querySelector(".discount")// mapeando botão "pagamento via Pix"
 const infoCart = document.querySelector(".addCart-quantity") // informações do meu carrinho de compras
 
 const cardItemCheckin = document.querySelector(".card-item-checkin")// section onde as info do product do meu carrinho está
@@ -29,6 +29,7 @@ function viewProducts(productsArray) { // mostrar produto
     })
 }
 
+/*
 function mapDiscount() {
     const menuWithDiscount = menuVps.map(product => ({
         ...product, // mantém todos os itens igual, exceto o que eu citei abaixo para as mudanças
@@ -36,6 +37,7 @@ function mapDiscount() {
     }));
     viewProducts(menuWithDiscount); // Chama a função para mostrar produtos com desconto
 }
+*/
 
 let addProduct = 0; // contador do carrinho
 
@@ -108,7 +110,7 @@ function deletProductFromCheckin(event) { // deletar item do checkin
 }; document.addEventListener("click", deletProductFromCheckin);
 
 buttonProducts.addEventListener("click", () => viewProducts(menuVps)) //arrow fucntion adicionada para esconder meus produtos ate o click do botão
-buttonDiscount.addEventListener("click", mapDiscount) // gerar desconto de 5%
+// buttonDiscount.addEventListener("click", mapDiscount) // gerar desconto de 5%
 infoCart.addEventListener("click", visibleCheckin) // mostrar o checkin
 mascaraCheckin.addEventListener("click", visibleCheckin) // mostrar mascara do checkin
 mascaraCheckin.addEventListener("click", hiddenCheckin) // esconder checkin
