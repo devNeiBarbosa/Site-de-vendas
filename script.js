@@ -5,15 +5,16 @@ const infoCart = document.querySelector(".addCart-quantity") // informações do
 
 const cardItemCheckin = document.querySelector(".card-item-checkin")// section onde as info do product do meu carrinho está
 const cardCheckin = document.querySelector(".add-cart") // button do carrinho
-const mascaraSite = document.querySelector(".background-color") // mascara do site para esconder checkin
 const checkinProducts = document.querySelector(".card-item-checkin") // checkin
+
+const mascaraCheckin = document.querySelector(".mascara-checkin") // mascara do checkin para esconde-lo
 
 function viewProducts(productsArray) { // mostrar produto
     let myDiv = ''; // reinicia o HTML
     productsArray.forEach(product => {
         myDiv += `
             <div class="product-vp">
-                <img src="${product.src}" alt="Info Valorant Points" width="220px">
+                <img src="${product.src}" alt="Info Valorant Points" width="100%">
                 <p>${product.name}</p>
                 <button class="button-value">
                     <img class="cart-button" src="/assets/img/cart.png" alt="image cart" width="16px"><b>RS${product.price.toFixed(2)}</b>
@@ -89,15 +90,26 @@ function viewProductsCheckin(productsArray) {
 
 function visibleCheckin() {
     checkinProducts.style.visibility = "visible"
+    mascaraCheckin.style.visibility = "visible"
 }
 
 function hiddenCheckin() {
     checkinProducts.style.visibility = "hidden"
+    mascaraCheckin.style.visibility = "hidden"
 }
 
+function deletProductFromCheckin(event) { // deletar item do checkin
+    // Verifica se o botão de delete foi clicado
+    if (event.target.closest(".delet-icon-checkin")) {
+        checkinProducts.innerHTML = ''; // Limpa o conteúdo do checkin
+        addProduct = 0; // Zera o contador do carrinho
+        infoCart.innerHTML = addProduct; // Atualiza a quantidade no carrinho
+    }
+}; document.addEventListener("click", deletProductFromCheckin);
 
 buttonProducts.addEventListener("click", () => viewProducts(menuVps)) //arrow fucntion adicionada para esconder meus produtos ate o click do botão
-buttonDiscount.addEventListener("click", mapDiscount)
-infoCart.addEventListener("click", visibleCheckin)
-mascaraSite.addEventListener("click", hiddenCheckin)
-cardCheckin.addEventListener("click", viewProductsCheckin(itemCart))
+buttonDiscount.addEventListener("click", mapDiscount) // gerar desconto de 5%
+infoCart.addEventListener("click", visibleCheckin) // mostrar o checkin
+mascaraCheckin.addEventListener("click", visibleCheckin) // mostrar mascara do checkin
+mascaraCheckin.addEventListener("click", hiddenCheckin) // esconder checkin
+cardCheckin.addEventListener("click", viewProductsCheckin(itemCart)) // mostrar item do chekin
